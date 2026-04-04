@@ -1,0 +1,5 @@
+Sample_ID,Type,Platform,Layout,Filename
+Chr3_Illumina,Genomic_DNA,Illumina,Paired,chr3_illumina_R1.fastq.gz;chr3_illumina_R2.fastq.gz
+Chr3_HiC,Chromatin_Capture,Illumina,Paired,chr3_hiC_R1.fastq.gz;chr3_hiC_R2.fastq.gz
+Chr3_Nanopore,Genomic_DNA,Oxford_Nanopore,Single,chr3_clean_nanopore.fq.gz
+WG_Reference,Genomic_DNA,Illumina,Paired,CRR809859_f1.fastq.gz;CRR809859_r2.fastq.gz

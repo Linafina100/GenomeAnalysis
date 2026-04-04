@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Ladda moduler
+# Load  moduls
 module load FastQC
 
 # FastQC on whole genome raw data 
