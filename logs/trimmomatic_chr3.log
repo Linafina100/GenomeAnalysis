@@ -1,0 +1,6 @@
+TrimmomaticPE: Started with arguments:
+ -threads 4 data/raw_data/chromosome_3_data/chr3_illumina_R1.fastq.gz data/raw_data/chromosome_3_data/chr3_illumina_R2.fastq.gz data/trimmed_data/chromosome_3/chr3_R1_paired.fq.gz data/trimmed_data/chromosome_3/chr3_R1_unpaired.fq.gz data/trimmed_data/chromosome_3/chr3_R2_paired.fq.gz data/trimmed_data/chromosome_3/chr3_R2_unpaired.fq.gz LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+Quality encoding detected as phred33
+Input Read Pairs: 20979851 Both Surviving: 20737992 (98.85%) Forward Only Surviving: 147044 (0.70%) Reverse Only Surviving: 88049 (0.42%) Dropped: 6766 (0.03%)
+TrimmomaticPE: Completed successfully
+Trimming for Chromosome 3 Illumina reads completed at Mon Apr  6 06:59:10 PM CEST 2026
