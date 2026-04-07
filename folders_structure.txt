@@ -1,0 +1,55 @@
+.
+├── analyses
+│   ├── 01_preprocessing
+│   │   ├── chromosome_3
+│   │   │   └── fastqc_raw
+│   │   │       ├── chr3_clean_nanopore_fastqc.html
+│   │   │       ├── chr3_clean_nanopore_fastqc.zip
+│   │   │       ├── chr3_hiC_R1_fastqc.html
+│   │   │       ├── chr3_hiC_R1_fastqc.zip
+│   │   │       ├── chr3_hiC_R2_fastqc.html
+│   │   │       ├── chr3_hiC_R2_fastqc.zip
+│   │   │       ├── chr3_illumina_R1_fastqc.html
+│   │   │       ├── chr3_illumina_R1_fastqc.zip
+│   │   │       ├── chr3_illumina_R2_fastqc.html
+│   │   │       └── chr3_illumina_R2_fastqc.zip
+│   │   ├── fastqc_trim
+│   │   │   ├── chr3_R1_paired_fastqc.html
+│   │   │   ├── chr3_R1_paired_fastqc.zip
+│   │   │   ├── chr3_R2_paired_fastqc.html
+│   │   │   └── chr3_R2_paired_fastqc.zip
+│   │   ├── trimming_software
+│   │   │   ├── chr3_R1_paired.fastq.gz -> ../../../data/trimmed_data/chromosome_3/chr3_R1_paired.fastq.gz
+│   │   │   └── chr3_R2_paired.fastq.gz -> ../../../data/trimmed_data/chromosome_3/chr3_R2_paired.fastq.gz
+│   │   └── whole_genome
+│   │       └── fastqc_raw
+│   │           ├── WG_R1_fastqc.html
+│   │           ├── WG_R1_fastqc.zip
+│   │           ├── WG_R2_fastqc.html
+│   │           └── WG_R2_fastqc.zip
+│   ├── 02_genome_assembly
+│   └── 03_structural_annotation
+├── code
+│   ├── 1_fastqc_WG_raw.sh
+│   ├── 2_fastqc_chr3_raw.sh
+│   └── 3_trimmomatic_chr3.sh
+├── data
+│   ├── metadata
+│   │   └── sample_info.csv
+│   ├── raw_data
+│   │   ├── chr3_R1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R1.fastq.gz
+│   │   ├── chr3_R2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R2.fastq.gz
+│   │   ├── WG_R1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_f1.fq.gz
+│   │   └── WG_R2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_r2.fq.gz
+│   └── trimmed_data
+│       └── chromosome_3
+│           ├── chr3_R1_paired.fastq.gz
+│           ├── chr3_R1_unpaired.fastq.gz
+│           ├── chr3_R2_paired.fastq.gz
+│           └── chr3_R2_unpaired.fastq.gz
+├── folders_structure.txt
+├── logs
+│   └── trimmomatic_chr3.log
+└── README.md
+
+17 directories, 35 files
