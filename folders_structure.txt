@@ -37,10 +37,10 @@
 │   ├── metadata
 │   │   └── sample_info.csv
 │   ├── raw_data
-│   │   ├── chr3_R1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R1.fastq.gz
-│   │   ├── chr3_R2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R2.fastq.gz
-│   │   ├── WG_R1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_f1.fq.gz
-│   │   └── WG_R2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_r2.fq.gz
+│   │   ├── chr3_illumina_R1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R1.fastq.gz
+│   │   ├── chr3_illumina_R2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R2.fastq.gz
+│   │   ├── CRR809859_f1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_f1.fq.gz
+│   │   └── CRR809859_r2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_r2.fq.gz
 │   └── trimmed_data
 │       └── chromosome_3
 │           ├── chr3_R1_paired.fastq.gz
