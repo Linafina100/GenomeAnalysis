@@ -5,9 +5,9 @@ This repository contains the pipeline for a comprehensive bioinformatic analysis
 The original study used a combination of long-read Nanopore sequencing, short-read Illumina sequencing, and Hi-C scaffolding to assemble a reference genome and study gene expression changes under heat stress. The purpose of this project is to replicate the preprocessing, assembly of Chromosome 3, and subsequent differential expression analysis.
 
 ## Repository Structure
-To ensure reproducibility and organization, the project is divided into three primary subfolders:
+The project is divided into three primary subfolders:
 
-data/: Contains metadata and symbolic links to raw sequencing data (Nanopore, Illumina DNA/RNA).
+data/: Contains metadata.
 
 code/: Contains all Bash and R scripts used for processing and analysis.
 
