@@ -9,35 +9,26 @@ The project is divided into three primary subfolders:
 
 data/: Contains metadata.
 
-code/: Contains all Bash and R scripts used for processing and analysis.
+code/: Contains all Bash and R scripts used for pre-processing and analysis.
 
 analyses/: Stores the outputs and results, including QC reports and assembly statistics.
 
-## High-Level Pipeline
-Preprocessing & Quality Control
+## Pipeline
+1. Preprocessing & quality Control
+2. Genome assembly
+3. Polishing
+5. Functional and structural annotation
+6. Transcriptomic analysis (differential expression)
 
-Genome Assembly & Polishing
-
-Assembly Evaluation & Comparison
-
-Functional Annotation
-
-Transcriptomic Analysis (Differential Expression)
-
-Detailed Workflow
+### Detailed Workflow
 The analysis is designed to be executed in the following order:
 
-Raw Data QC: Initial quality assessment of Illumina DNA reads using FastQC.
-
-Read Preprocessing: Adapter removal and quality trimming using Trimmomatic.
-
-Post-Trimming QC: Secondary assessment with FastQC to verify trimming efficiency.
-
-Genome Assembly: De novo assembly of Chromosome 3 using Nanopore long-reads and Illumina short-read polishing.
-
-Assembly Evaluation: Quality assessment of the resulting contigs using QUAST.
-
-Synteny & Comparison: Visual comparison of the assembly against the reference genome using MUMmer/MUMmerplot.
+1. Raw Data QC: Initial quality assessment of Illumina DNA reads using FastQC.
+2. Read Preprocessing: Adapter removal and quality trimming using Trimmomatic.
+3. Post-Trimming QC: Secondary assessment with FastQC to verify trimming efficiency.
+4. Genome Assembly: De novo assembly of Chromosome 3 using Nanopore long-reads and Illumina short-read polishing.
+5. Assembly Evaluation: Quality assessment of the resulting contigs using QUAST.
+6. Synteny & Comparison: Visual comparison of the assembly against the reference genome using MUMmer/MUMmerplot.
 
 Functional Annotation: Identifying gene structures and coding sequences.
 
