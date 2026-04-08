@@ -14,11 +14,12 @@ code/: Contains all Bash and R scripts used for pre-processing and analysis.
 analyses/: Stores the outputs and results, including QC reports and assembly statistics.
 
 ## Pipeline
-1. Preprocessing & quality Control
-2. Genome assembly
-3. Polishing
-5. Functional and structural annotation
-6. Transcriptomic analysis (differential expression)
+1. Preprocessing & quality control.
+2. Genome assembly.
+3. Polishing assembly.
+4. Evaluating assembly quality.
+5. Functional and structural annotation.
+6. Transcriptomic analysis (differential expression).
 
 ### Detailed Workflow
 The analysis is designed to be executed in the following order:
@@ -26,20 +27,8 @@ The analysis is designed to be executed in the following order:
 1. Raw Data QC: Initial quality assessment of Illumina DNA reads using FastQC.
 2. Read Preprocessing: Adapter removal and quality trimming using Trimmomatic.
 3. Post-Trimming QC: Secondary assessment with FastQC to verify trimming efficiency.
-4. Genome Assembly: De novo assembly of Chromosome 3 using Nanopore long-reads and Illumina short-read polishing.
-5. Assembly Evaluation: Quality assessment of the resulting contigs using QUAST.
-6. Synteny & Comparison: Visual comparison of the assembly against the reference genome using MUMmer/MUMmerplot.
-
-Functional Annotation: Identifying gene structures and coding sequences.
-
-RNA-Seq Preprocessing: QC and trimming of Illumina RNA-seq reads (Heat Stress vs. Control).
-
-Read Mapping: Aligning RNA-seq reads to the new assembly using BWA/SAMtools.
-
-Quantification: Generating gene-level counts using HTSeq-count.
-
-Differential Expression: Statistical analysis of heat stress response using DESeq2 in R
-
-
-
-Trimmed reads are stored in the data directory. Symbolic links are used in the analyses directory to reflect workflow steps without duplicating large files.
+4. Genome Assembly: De novo assembly of Chromosome 3 using Nanopore long-reads with Fly/Canu (tbd).
+5. Polishing with Illumina short-reads using Pilon.
+6. Assembly Evaluation: Quality assessment of the resulting contigs using QUAST.
+7. Structural gene prediction with BRAKER2 and functional assignment with eggNOG-mapper.
+8. Differential expression analysis across heat conditions with STAR, featureCounts and DESeq2.
