@@ -37,6 +37,7 @@
 │   ├── metadata
 │   │   └── sample_info.csv
 │   ├── raw_data
+│   │   ├── chr3_clean_nanopore.fq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_clean_nanopore.fq.gz
 │   │   ├── chr3_illumina_R1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R1.fastq.gz
 │   │   ├── chr3_illumina_R2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R2.fastq.gz
 │   │   ├── CRR809859_f1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_f1.fq.gz
@@ -47,9 +48,20 @@
 │           ├── chr3_R1_unpaired.fastq.gz
 │           ├── chr3_R2_paired.fastq.gz
 │           └── chr3_R2_unpaired.fastq.gz
+├── figures
+│   ├── 01_initial_qc
+│   │   ├── adapter_r1_initial.png
+│   │   ├── adapter_r2_initial.png
+│   │   ├── quality_r1_initial.png
+│   │   └── quality_r2_initial.png
+│   └── 02_post_trim_qc
+│       ├── adapter_r1_post_trim.png
+│       ├── adapter_r2_post_trim.png
+│       ├── quality_r1_post_trim.png
+│       └── quality_r2_post_trim.png
 ├── folders_structure.txt
 ├── logs
 │   └── trimmomatic_chr3.log
 └── README.md
 
-17 directories, 35 files
+20 directories, 44 files
