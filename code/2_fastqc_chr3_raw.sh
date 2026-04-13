@@ -10,4 +10,4 @@
 #SBATCH --output=%x.%j.out
 
 module load FastQC
-fastqc -t 2 data/raw_data/chr3_illumina_*.fastq.gz -o analyses/01_preprocessing/chromosome_3/fastqc_raw/
+fastqc -t 2 data/raw_data/chr3_*.fastq.gz -o analyses/01_preprocessing/chromosome_3/fastqc_raw/
