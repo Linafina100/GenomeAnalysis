@@ -4,4 +4,4 @@ analyses/**/*.fastq.gz
 analyses/**/*.bam
 analyses/**/*.sam
 *.out
-*.log
+analyses/02_genome_assembly/**/*.log
