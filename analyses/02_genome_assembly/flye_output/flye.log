@@ -1,0 +1,147 @@
+[2026-04-13 13:30:15] root: INFO: Starting Flye 2.9.6-b1802
+[2026-04-13 13:30:15] root: DEBUG: Cmd: /sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/bin/flye --nano-raw data/raw_data/chr3_clean_nanopore.fq.gz --out-dir analyses/02_genome_assembly/flye_output --threads 2
+[2026-04-13 13:30:15] root: DEBUG: Python version: 3.12.3 (main, Mar 17 2026, 17:56:53) [GCC 13.3.0]
+[2026-04-13 13:30:15] root: INFO: >>>STAGE: configure
+[2026-04-13 13:30:15] root: INFO: Configuring run
+[2026-04-13 13:32:07] root: INFO: Total read length: 10024814876
+[2026-04-13 13:32:07] root: INFO: Reads N50/N90: 27021 / 7196
+[2026-04-13 13:32:07] root: INFO: Minimum overlap set to 7000
+[2026-04-13 13:32:07] root: INFO: >>>STAGE: assembly
+[2026-04-13 13:32:07] root: INFO: Assembling disjointigs
+[2026-04-13 13:32:07] root: DEBUG: -----Begin assembly log------
+[2026-04-13 13:32:07] root: DEBUG: Running: flye-modules assemble --reads /gorilla/home/lisa5634/GenomeAnalysis/data/raw_data/chr3_clean_nanopore.fq.gz --out-asm /gorilla/home/lisa5634/GenomeAnalysis/analyses/02_genome_assembly/flye_output/00-assembly/draft_assembly.fasta --config /sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/lib/python3.12/site-packages/flye/config/bin_cfg/asm_raw_reads.cfg --log /gorilla/home/lisa5634/GenomeAnalysis/analyses/02_genome_assembly/flye_output/flye.log --threads 2 --min-ovlp 7000
+[2026-04-13 13:32:07] DEBUG: Build date: Jun 11 2025 16:53:00
+[2026-04-13 13:32:07] DEBUG: Total RAM: 754 Gb
+[2026-04-13 13:32:07] DEBUG: Available RAM: 732 Gb
+[2026-04-13 13:32:07] DEBUG: Total CPUs: 96
+[2026-04-13 13:32:07] DEBUG: Loading /sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/lib/python3.12/site-packages/flye/config/bin_cfg/asm_raw_reads.cfg
+[2026-04-13 13:32:07] DEBUG: Loading /sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/lib/python3.12/site-packages/flye/config/bin_cfg/asm_defaults.cfg
+[2026-04-13 13:32:07] DEBUG: 	big_genome_threshold=29000000
+[2026-04-13 13:32:07] DEBUG: 	meta_read_filter_kmer_freq=100
+[2026-04-13 13:32:07] DEBUG: 	chain_large_gap_penalty=2
+[2026-04-13 13:32:07] DEBUG: 	chain_small_gap_penalty=0.5
+[2026-04-13 13:32:07] DEBUG: 	chain_gap_jump_threshold=100
+[2026-04-13 13:32:07] DEBUG: 	max_jump_gap=500
+[2026-04-13 13:32:07] DEBUG: 	max_coverage_drop_rate=5
+[2026-04-13 13:32:07] DEBUG: 	max_extensions_drop_rate=5
+[2026-04-13 13:32:07] DEBUG: 	chimera_window=100
+[2026-04-13 13:32:07] DEBUG: 	chimera_overhang=1000
+[2026-04-13 13:32:07] DEBUG: 	min_reads_in_disjointig=4
+[2026-04-13 13:32:07] DEBUG: 	max_inner_reads=10
+[2026-04-13 13:32:07] DEBUG: 	max_inner_fraction=0.25
+[2026-04-13 13:32:07] DEBUG: 	aggressive_dup_filter=1
+[2026-04-13 13:32:07] DEBUG: 	max_separation=500
+[2026-04-13 13:32:07] DEBUG: 	unique_edge_length=50000
+[2026-04-13 13:32:07] DEBUG: 	min_repeat_res_support=0.51
+[2026-04-13 13:32:07] DEBUG: 	out_paths_ratio=5
+[2026-04-13 13:32:07] DEBUG: 	graph_cov_drop_rate=5
+[2026-04-13 13:32:07] DEBUG: 	coverage_estimate_window=100
+[2026-04-13 13:32:07] DEBUG: 	max_bubble_length=50000
+[2026-04-13 13:32:07] DEBUG: 	loop_coverage_rate=1.5
+[2026-04-13 13:32:07] DEBUG: 	repeat_edge_cov_mult=1.75
+[2026-04-13 13:32:07] DEBUG: 	weak_detach_rate=5
+[2026-04-13 13:32:07] DEBUG: 	tip_coverage_rate=2
+[2026-04-13 13:32:07] DEBUG: 	tip_length_rate=2
+[2026-04-13 13:32:07] DEBUG: 	output_gfa_before_rr=1
+[2026-04-13 13:32:07] DEBUG: 	remove_alt_edges=0
+[2026-04-13 13:32:07] DEBUG: 	low_cutoff_warning=1
+[2026-04-13 13:32:07] DEBUG: 	kmer_size=17
+[2026-04-13 13:32:07] DEBUG: 	use_minimizers=0
+[2026-04-13 13:32:07] DEBUG: 	reads_base_alignment=0
+[2026-04-13 13:32:07] DEBUG: 	meta_read_top_kmer_rate=0.40
+[2026-04-13 13:32:07] DEBUG: 	maximum_jump=1500
+[2026-04-13 13:32:07] DEBUG: 	maximum_overhang=1500
+[2026-04-13 13:32:07] DEBUG: 	repeat_kmer_rate=100
+[2026-04-13 13:32:07] DEBUG: 	assemble_ovlp_divergence=0.10
+[2026-04-13 13:32:07] DEBUG: 	assemble_divergence_relative=1
+[2026-04-13 13:32:07] DEBUG: 	repeat_graph_ovlp_divergence=0.08
+[2026-04-13 13:32:07] DEBUG: 	read_align_ovlp_divergence=0.25
+[2026-04-13 13:32:07] DEBUG: 	hpc_scoring_on=0
+[2026-04-13 13:32:07] DEBUG: 	add_unassembled_reads=0
+[2026-04-13 13:32:07] DEBUG: 	extend_contigs_with_repeats=0
+[2026-04-13 13:32:07] DEBUG: 	min_read_cov_cutoff=3
+[2026-04-13 13:32:07] DEBUG: 	short_tip_length=20000
+[2026-04-13 13:32:07] DEBUG: 	long_tip_length=100000
+[2026-04-13 13:32:07] DEBUG: Running with k-mer size: 17
+[2026-04-13 13:32:07] DEBUG: Running with minimum overlap 7000
+[2026-04-13 13:32:07] DEBUG: Metagenome mode: N
+[2026-04-13 13:32:07] DEBUG: Short mode: N
+[2026-04-13 13:32:07] INFO: Reading sequences
+[2026-04-13 13:33:41] DEBUG: Building positional index
+[2026-04-13 13:33:41] DEBUG: Total sequence: 9049125522 bp
+[2026-04-13 13:33:42] INFO: Counting k-mers:
+[2026-04-13 13:40:54] root: ERROR: Looks like the system ran out of memory
+[2026-04-13 13:40:54] root: ERROR: Command '['flye-modules', 'assemble', '--reads', '/gorilla/home/lisa5634/GenomeAnalysis/data/raw_data/chr3_clean_nanopore.fq.gz', '--out-asm', '/gorilla/home/lisa5634/GenomeAnalysis/analyses/02_genome_assembly/flye_output/00-assembly/draft_assembly.fasta', '--config', '/sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/lib/python3.12/site-packages/flye/config/bin_cfg/asm_raw_reads.cfg', '--log', '/gorilla/home/lisa5634/GenomeAnalysis/analyses/02_genome_assembly/flye_output/flye.log', '--threads', '2', '--min-ovlp', '7000']' died with <Signals.SIGKILL: 9>.
+[2026-04-13 13:40:54] root: ERROR: Pipeline aborted
+[2026-04-13 13:48:18] root: INFO: Starting Flye 2.9.6-b1802
+[2026-04-13 13:48:18] root: DEBUG: Cmd: /sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/bin/flye --nano-raw data/raw_data/chr3_clean_nanopore.fq.gz --out-dir analyses/02_genome_assembly/flye_output --threads 2
+[2026-04-13 13:48:18] root: DEBUG: Python version: 3.12.3 (main, Mar 17 2026, 17:56:53) [GCC 13.3.0]
+[2026-04-13 13:48:18] root: INFO: >>>STAGE: configure
+[2026-04-13 13:48:18] root: INFO: Configuring run
+[2026-04-13 13:50:08] root: INFO: Total read length: 10024814876
+[2026-04-13 13:50:08] root: INFO: Reads N50/N90: 27021 / 7196
+[2026-04-13 13:50:08] root: INFO: Minimum overlap set to 7000
+[2026-04-13 13:50:08] root: INFO: >>>STAGE: assembly
+[2026-04-13 13:50:08] root: INFO: Assembling disjointigs
+[2026-04-13 13:50:08] root: DEBUG: -----Begin assembly log------
+[2026-04-13 13:50:08] root: DEBUG: Running: flye-modules assemble --reads /gorilla/home/lisa5634/GenomeAnalysis/data/raw_data/chr3_clean_nanopore.fq.gz --out-asm /gorilla/home/lisa5634/GenomeAnalysis/analyses/02_genome_assembly/flye_output/00-assembly/draft_assembly.fasta --config /sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/lib/python3.12/site-packages/flye/config/bin_cfg/asm_raw_reads.cfg --log /gorilla/home/lisa5634/GenomeAnalysis/analyses/02_genome_assembly/flye_output/flye.log --threads 2 --min-ovlp 7000
+[2026-04-13 13:50:08] DEBUG: Build date: Jun 11 2025 16:53:00
+[2026-04-13 13:50:08] DEBUG: Total RAM: 754 Gb
+[2026-04-13 13:50:08] DEBUG: Available RAM: 740 Gb
+[2026-04-13 13:50:08] DEBUG: Total CPUs: 96
+[2026-04-13 13:50:08] DEBUG: Loading /sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/lib/python3.12/site-packages/flye/config/bin_cfg/asm_raw_reads.cfg
+[2026-04-13 13:50:08] DEBUG: Loading /sw/arch/eb/software/Flye/2.9.6-GCC-13.3.0/lib/python3.12/site-packages/flye/config/bin_cfg/asm_defaults.cfg
+[2026-04-13 13:50:08] DEBUG: 	big_genome_threshold=29000000
+[2026-04-13 13:50:08] DEBUG: 	meta_read_filter_kmer_freq=100
+[2026-04-13 13:50:08] DEBUG: 	chain_large_gap_penalty=2
+[2026-04-13 13:50:08] DEBUG: 	chain_small_gap_penalty=0.5
+[2026-04-13 13:50:08] DEBUG: 	chain_gap_jump_threshold=100
+[2026-04-13 13:50:08] DEBUG: 	max_jump_gap=500
+[2026-04-13 13:50:08] DEBUG: 	max_coverage_drop_rate=5
+[2026-04-13 13:50:08] DEBUG: 	max_extensions_drop_rate=5
+[2026-04-13 13:50:08] DEBUG: 	chimera_window=100
+[2026-04-13 13:50:08] DEBUG: 	chimera_overhang=1000
+[2026-04-13 13:50:08] DEBUG: 	min_reads_in_disjointig=4
+[2026-04-13 13:50:08] DEBUG: 	max_inner_reads=10
+[2026-04-13 13:50:08] DEBUG: 	max_inner_fraction=0.25
+[2026-04-13 13:50:08] DEBUG: 	aggressive_dup_filter=1
+[2026-04-13 13:50:08] DEBUG: 	max_separation=500
+[2026-04-13 13:50:08] DEBUG: 	unique_edge_length=50000
+[2026-04-13 13:50:08] DEBUG: 	min_repeat_res_support=0.51
+[2026-04-13 13:50:08] DEBUG: 	out_paths_ratio=5
+[2026-04-13 13:50:08] DEBUG: 	graph_cov_drop_rate=5
+[2026-04-13 13:50:08] DEBUG: 	coverage_estimate_window=100
+[2026-04-13 13:50:08] DEBUG: 	max_bubble_length=50000
+[2026-04-13 13:50:08] DEBUG: 	loop_coverage_rate=1.5
+[2026-04-13 13:50:08] DEBUG: 	repeat_edge_cov_mult=1.75
+[2026-04-13 13:50:08] DEBUG: 	weak_detach_rate=5
+[2026-04-13 13:50:08] DEBUG: 	tip_coverage_rate=2
+[2026-04-13 13:50:08] DEBUG: 	tip_length_rate=2
+[2026-04-13 13:50:08] DEBUG: 	output_gfa_before_rr=1
+[2026-04-13 13:50:08] DEBUG: 	remove_alt_edges=0
+[2026-04-13 13:50:08] DEBUG: 	low_cutoff_warning=1
+[2026-04-13 13:50:08] DEBUG: 	kmer_size=17
+[2026-04-13 13:50:08] DEBUG: 	use_minimizers=0
+[2026-04-13 13:50:08] DEBUG: 	reads_base_alignment=0
+[2026-04-13 13:50:08] DEBUG: 	meta_read_top_kmer_rate=0.40
+[2026-04-13 13:50:08] DEBUG: 	maximum_jump=1500
+[2026-04-13 13:50:08] DEBUG: 	maximum_overhang=1500
+[2026-04-13 13:50:08] DEBUG: 	repeat_kmer_rate=100
+[2026-04-13 13:50:08] DEBUG: 	assemble_ovlp_divergence=0.10
+[2026-04-13 13:50:08] DEBUG: 	assemble_divergence_relative=1
+[2026-04-13 13:50:08] DEBUG: 	repeat_graph_ovlp_divergence=0.08
+[2026-04-13 13:50:08] DEBUG: 	read_align_ovlp_divergence=0.25
+[2026-04-13 13:50:08] DEBUG: 	hpc_scoring_on=0
+[2026-04-13 13:50:08] DEBUG: 	add_unassembled_reads=0
+[2026-04-13 13:50:08] DEBUG: 	extend_contigs_with_repeats=0
+[2026-04-13 13:50:08] DEBUG: 	min_read_cov_cutoff=3
+[2026-04-13 13:50:08] DEBUG: 	short_tip_length=20000
+[2026-04-13 13:50:08] DEBUG: 	long_tip_length=100000
+[2026-04-13 13:50:08] DEBUG: Running with k-mer size: 17
+[2026-04-13 13:50:08] DEBUG: Running with minimum overlap 7000
+[2026-04-13 13:50:08] DEBUG: Metagenome mode: N
+[2026-04-13 13:50:08] DEBUG: Short mode: N
+[2026-04-13 13:50:08] INFO: Reading sequences
+[2026-04-13 13:51:42] DEBUG: Building positional index
+[2026-04-13 13:51:42] DEBUG: Total sequence: 9049125522 bp
+[2026-04-13 13:51:43] INFO: Counting k-mers:
