@@ -4,3 +4,4 @@ analyses/**/*.fastq.gz
 analyses/**/*.bam
 analyses/**/*.sam
 analyses/02_genome_assembly/**/*.log
+analyses/04_assessment/busco_output/busco_results/run_embryophyta_odb10/
