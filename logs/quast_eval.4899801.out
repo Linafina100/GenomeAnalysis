@@ -1,0 +1,67 @@
+/sw/arch/eb/software/QUAST/5.3.0-gfbf-2024a/bin/quast.py analyses/03_polishing/pilon_output/draft_assembly.fasta analyses/03_polishing/pilon_output/chr3_polished.fasta -o analyses/04_assessment/quast_results --labels Draft_Flye,Polished_Pilon
+
+Version: 5.3.0
+
+System information:
+  OS: Linux-5.14.0-611.41.1.el9_7.x86_64-x86_64-with-glibc2.34 (linux_64)
+  Python version: 3.12.3
+  CPUs number: 96
+
+Started: 2026-04-15 10:12:19
+
+Logging to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/quast.log
+NOTICE: Maximum number of threads is set to 24 (use --threads option to set it manually)
+
+CWD: /gorilla/home/lisa5634/GenomeAnalysis
+Main parameters: 
+  MODE: default, threads: 24, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Contigs:
+  Pre-processing...
+  1  analyses/03_polishing/pilon_output/draft_assembly.fasta ==> Draft_Flye
+  2  analyses/03_polishing/pilon_output/chr3_polished.fasta ==> Polished_Pilon
+
+2026-04-15 10:12:36
+Running Basic statistics processor...
+  Contig files: 
+    1  Draft_Flye
+    2  Polished_Pilon
+  Calculating N50 and L50...
+    1  Draft_Flye, N50 = 1724286, L50 = 4, auN = 1492150.3, Total length = 17180756, GC % = 41.96, # N's per 100 kbp =  0.00
+    2  Polished_Pilon, N50 = 1727450, L50 = 4, auN = 1494535.9, Total length = 17208405, GC % = 41.79, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/basic_stats/Nx_plot.pdf
+  Drawing cumulative plot...
+    saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/basic_stats/GC_content_plot.pdf
+  Drawing Draft_Flye GC content plot...
+    saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/basic_stats/Draft_Flye_GC_content_plot.pdf
+  Drawing Polished_Pilon GC content plot...
+    saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/basic_stats/Polished_Pilon_GC_content_plot.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2026-04-15 10:12:43
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating PDF with all tables and plots...
+  2 of 2: Creating Icarus viewers...
+Done
+
+2026-04-15 10:12:43
+RESULTS:
+  Text versions of total report are saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/report.html
+  PDF version (tables and plots) is saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/report.pdf
+  Icarus (contig browser) is saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/icarus.html
+  Log is saved to /gorilla/home/lisa5634/GenomeAnalysis/analyses/04_assessment/quast_results/quast.log
+
+Finished: 2026-04-15 10:12:44
+Elapsed time: 0:00:24.438665
+NOTICEs: 2; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

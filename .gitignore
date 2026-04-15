@@ -3,5 +3,4 @@ data/trimmed_data/*
 analyses/**/*.fastq.gz
 analyses/**/*.bam
 analyses/**/*.sam
-*.out
 analyses/02_genome_assembly/**/*.log
