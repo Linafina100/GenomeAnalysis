@@ -1,0 +1,25 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                    Draft_Flye  Polished_Pilon
+# contigs (>= 0 bp)         60          60            
+# contigs (>= 1000 bp)      59          59            
+# contigs (>= 5000 bp)      54          54            
+# contigs (>= 10000 bp)     51          52            
+# contigs (>= 25000 bp)     39          39            
+# contigs (>= 50000 bp)     26          26            
+Total length (>= 0 bp)      17180756    17208405      
+Total length (>= 1000 bp)   17180114    17207763      
+Total length (>= 5000 bp)   17164750    17192381      
+Total length (>= 10000 bp)  17140248    17177846      
+Total length (>= 25000 bp)  16929986    16957269      
+Total length (>= 50000 bp)  16477868    16504562      
+# contigs                   60          60            
+Largest contig              2922085     2927688       
+Total length                17180756    17208405      
+GC (%)                      41.96       41.79         
+N50                         1724286     1727450       
+N90                         229580      228474        
+auN                         1492150.3   1494535.9     
+L50                         4           4             
+L90                         16          16            
+# N's per 100 kbp           0.00        0.00          
