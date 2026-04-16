@@ -12,7 +12,7 @@
 # Load the necessary modules
 module load Flye
 
-# Run Flye assembly using your specific folder paths
+# Run Flye assembly using the specific folder paths
 flye --nano-raw data/raw_data/chr3_clean_nanopore.fq.gz \
      --out-dir analyses/02_genome_assembly/flye_output \
      --threads 16
