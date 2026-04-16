@@ -13,7 +13,7 @@ module load QUAST
 OUTDIR="analyses/04_assessment/quast_results"
 mkdir -p $OUTDIR
 
-# Run QUAST with corrected flags
+# Run QUAST
 quast.py analyses/03_polishing/pilon_output/draft_assembly.fasta \
          analyses/03_polishing/pilon_output/chr3_polished.fasta \
          -o $OUTDIR \
