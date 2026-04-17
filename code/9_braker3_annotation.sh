@@ -2,7 +2,7 @@
 #SBATCH -A uppmax2026-1-61
 #SBATCH -p pelle
 #SBATCH -c 2
-#SBATCH -t 00:20:00
+#SBATCH -t 40:00:00
 #SBATCH -J star_braker
 #SBATCH --mail-type=ALL
 #SBATCH --output=%x.%j.out
