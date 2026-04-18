@@ -1,11 +1,11 @@
 #!/bin/bash -l
 #SBATCH -A uppmax2026-1-61
 #SBATCH -p pelle
-#SBATCH -c 2
+#SBATCH -c 8
 #SBATCH -t 40:00:00
 #SBATCH -J star_braker
 #SBATCH --mail-type=ALL
-#SBATCH --output=%x.%j.out
+#SBATCH --output=/home/lisa5634/GenomeAnalysis/analyses/05_structural_annotation/02_structure_annotation/%x.%j.out
 
 # load modules
 module load STAR/2.7.11b-GCC-13.3.0
@@ -26,13 +26,13 @@ OUT_DIR="/home/lisa5634/GenomeAnalysis/analyses/05_structural_annotation/02_stru
 mkdir -p $OUT_DIR/star_index
 
 # build star index
-STAR --runThreadN 2 \
+STAR --runThreadN 8 \
      --runMode genomeGenerate \
      --genomeDir $OUT_DIR/star_index \
      --genomeFastaFiles $MASKED_GENOME
 
 # map rna reads
-STAR --runThreadN 2 \
+STAR --runThreadN 8 \
      --genomeDir $OUT_DIR/star_index \
      --readFilesIn $RNA_R1 $RNA_R2 \
      --readFilesCommand zcat \
@@ -50,5 +50,5 @@ singularity exec \
               --prot_seq=$PROTEIN_DB \
               --softmasking \
               --species=niphotrichum_japonicum_lisa \
-              --threads=1 \
+              --threads=8 \
               --workingdir=$OUT_DIR/braker_output
