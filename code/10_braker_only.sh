@@ -32,4 +32,5 @@ singularity exec \
               --softmasking \
               --species=lisa2 \
               --threads=2 \
+	      --min_contig=5000 \
               --workingdir=$OUT_DIR/braker_output
