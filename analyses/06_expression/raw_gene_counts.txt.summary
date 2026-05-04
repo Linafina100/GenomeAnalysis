@@ -1,0 +1,15 @@
+Status	/home/lisa5634/GenomeAnalysis/analyses/06_expression/mapping_individual/Control_1_Aligned.sortedByCoord.out.bam	/home/lisa5634/GenomeAnalysis/analyses/06_expression/mapping_individual/Control_2_Aligned.sortedByCoord.out.bam	/home/lisa5634/GenomeAnalysis/analyses/06_expression/mapping_individual/Control_3_Aligned.sortedByCoord.out.bam	/home/lisa5634/GenomeAnalysis/analyses/06_expression/mapping_individual/Heat_treated_42_12h_1_Aligned.sortedByCoord.out.bam	/home/lisa5634/GenomeAnalysis/analyses/06_expression/mapping_individual/Heat_treated_42_12h_2_Aligned.sortedByCoord.out.bam	/home/lisa5634/GenomeAnalysis/analyses/06_expression/mapping_individual/Heat_treated_42_12h_3_Aligned.sortedByCoord.out.bam
+Assigned	3052275	2733849	2945002	2936546	2859466	3145208
+Unassigned_Unmapped	0	0	0	0	0	0
+Unassigned_Read_Type	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0
+Unassigned_MultiMapping	995850	682368	874524	962068	837752	772568
+Unassigned_Secondary	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0
+Unassigned_NoFeatures	508595	550494	518831	553414	499208	587296
+Unassigned_Overlapping_Length	0	0	0	0	0	0
+Unassigned_Ambiguity	35764	38675	43173	48034	51858	46446
