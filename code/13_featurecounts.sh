@@ -8,7 +8,7 @@
 #SBATCH --output=/home/lisa5634/GenomeAnalysis/analyses/06_expression/%x.%j.out
 
 # Load the required module 
-module load subread/2.0.3
+module load Subread/2.1.1-GCC-13.3.0
 
 # Define your exact file paths
 ANNOTATION="/home/lisa5634/GenomeAnalysis/analyses/05_annotation/02_structure_annotation/braker_output/braker.gtf"
