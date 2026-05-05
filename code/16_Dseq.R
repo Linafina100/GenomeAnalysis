@@ -1,17 +1,10 @@
-# ====================================================================
-# 1. LOAD ALL PACKAGES FIRST 
-# ====================================================================
+# Load packages
 library(ggplot2)   
 library(ggrepel)
 library(pheatmap)
 library(DESeq2)    
 
-# ====================================================================
-# ====================================================================
-# ====================================================================
-# 2. LOAD DATA & SPLIT NAMES FROM COUNTS
-# ====================================================================
-# Load your new CSV file
+# Load data and split from counts
 raw_data <- read.csv("gene_counts_renamed.csv", header=TRUE)
 
 # Delete any empty/blank rows Excel left behind at the bottom
@@ -20,31 +13,33 @@ raw_data <- raw_data[raw_data[, 1] != "" & !is.na(raw_data[, 1]), ]
 # Start by assuming we will use Column 2 (Annotation)
 best_names <- raw_data[, 2]
 
-# If Column 2 failed, but PFAM has a real name, use PFAM
+# Labeling logic
+
+# PFAM genes with no annotation
 use_pfam_index <- (raw_data[, 2] == raw_data[, 1]) & (raw_data[, 3] != "-") & (raw_data[, 3] != "")
-best_names[use_pfam_index] <- raw_data[use_pfam_index, 3]
+best_names[use_pfam_index] <- paste0(raw_data[use_pfam_index, 3], " [PFAM]")
 
-# --- NEW: TAG THE HYPOTHETICAL PROTEINS ---
-# Find genes that STILL only have their 'g' number (no Annotation, no PFAM)
+# Genes with only gene ID
 is_hypothetical <- (best_names == raw_data[, 1])
-# Append a tag to them so they look deliberate on the plots!
-best_names[is_hypothetical] <- paste0(best_names[is_hypothetical], " (hypo)")
+best_names[is_hypothetical] <- paste0(best_names[is_hypothetical], " [hypo]")
 
-# Secretly save these final, optimized names into the "dictionary" 
+# Save names into a dictionary 
 gene_dict <- best_names
 names(gene_dict) <- raw_data[, 1]
 
-# Set the hidden row names to the unique g-numbers (Column 1)
+# Set the hidden row names to the unique gene IDs (Column 1)
 rownames(raw_data) <- raw_data[, 1]
 
-# ONLY grab columns 4 through 9 (your count data)
+# Grab columns 4 through 9 (count data)
 counts <- raw_data[, 4:9]
+
+# If there are any random empty cells inside the data, make them 0
 counts[is.na(counts)] <- 0
+
+# Force numbers to integers
 counts <- round(counts)
 
-# ====================================================================
-# 3. RUN DESEQ2 MATH & EXPORT RESULTS
-# ====================================================================
+# Run DESeq2 and export results
 colData <- data.frame(condition = factor(c("Control", "Control", "Control", "Heat", "Heat", "Heat")))
 rownames(colData) <- colnames(counts)
 
@@ -56,14 +51,10 @@ write.csv(as.data.frame(res), file="Heat_vs_Control_DESeq2_Results.csv")
 
 vsd <- varianceStabilizingTransformation(dds, blind=FALSE)
 
-# ====================================================================
-# 4. DEFINE GLOBAL COLORS
-# ====================================================================
+# Define global colours
 my_colors <- c("Control" = "#00BFC4", "Heat" = "#F8766D") 
 
-# ====================================================================
-# 5. GENERATE PCA PLOT
-# ====================================================================
+# Generate PCA plot
 pcaData <- plotPCA(vsd, intgroup="condition", returnData=TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
 
@@ -77,20 +68,16 @@ ggplot(pcaData, aes(PC1, PC2, color=condition)) +
   ggtitle("PCA: Heat vs Control")
 dev.off()
 
-# ====================================================================
-# 6. GENE NAME MAPPING (USING YOUR EXCEL FILE)
-# ====================================================================
+# Gene name mapping
 res_df <- as.data.frame(res)
 res_df$Significance <- "Not Sig"
 res_df$Significance[res_df$log2FoldChange > 1 & res_df$padj < 0.05] <- "Up"
 res_df$Significance[res_df$log2FoldChange < -1 & res_df$padj < 0.05] <- "Down"
 
-# Map the clean names using the dictionary we created in Step 2!
+# Map the clean names using the dictionary
 res_df$GeneName <- gene_dict[rownames(res_df)]
 
-# ====================================================================
-# 7. GENERATE ANNOTATED VOLCANO PLOT
-# ====================================================================
+# Generate the volcano plot
 res_df <- res_df[order(res_df$padj), ] 
 top10_genes <- head(res_df, 10)
 
@@ -104,14 +91,11 @@ ggplot(res_df, aes(x=log2FoldChange, y=-log10(padj), color=Significance)) +
   theme(legend.position="right")
 dev.off()
 
-# ====================================================================
-# 8. GENERATE ANNOTATED HEATMAP
-# ====================================================================
+# Generate annotated heatmap
 top_genes <- order(res$padj)[1:20]
 mat <- assay(vsd)[top_genes, ]
 mat <- mat - rowMeans(mat)
 
-# Apply the real names to the heatmap rows
 rownames(mat) <- res_df[rownames(mat), "GeneName"]
 
 short_names <- c("Control_1", "Control_2", "Control_3", "Heat_1", "Heat_2", "Heat_3")
