@@ -18,6 +18,13 @@
 │   │   │   ├── chr3_R1_paired_fastqc.zip
 │   │   │   ├── chr3_R2_paired_fastqc.html
 │   │   │   └── chr3_R2_paired_fastqc.zip
+│   │   ├── hic
+│   │   │   ├── fastqc_hic.5222635.out
+│   │   │   └── fastqc_raw
+│   │   │       ├── chr3_hiC_R1_fastqc.html
+│   │   │       ├── chr3_hiC_R1_fastqc.zip
+│   │   │       ├── chr3_hiC_R2_fastqc.html
+│   │   │       └── chr3_hiC_R2_fastqc.zip
 │   │   ├── trimming_software
 │   │   │   ├── chr3_R1_paired.fastq.gz -> ../../../data/trimmed_data/chromosome_3/chr3_R1_paired.fastq.gz
 │   │   │   └── chr3_R2_paired.fastq.gz -> ../../../data/trimmed_data/chromosome_3/chr3_R2_paired.fastq.gz
@@ -28,11 +35,226 @@
 │   │           ├── WG_R2_fastqc.html
 │   │           └── WG_R2_fastqc.zip
 │   ├── 02_genome_assembly
-│   └── 03_structural_annotation
+│   │   └── flye_output
+│   │       ├── 00-assembly
+│   │       │   ├── draft_assembly.fasta
+│   │       │   └── draft_assembly.fasta.fai
+│   │       ├── 10-consensus
+│   │       │   ├── consensus.fasta
+│   │       │   ├── minimap.bam.csi
+│   │       │   └── minimap.stderr
+│   │       ├── 20-repeat
+│   │       │   ├── graph_after_rr.gv
+│   │       │   ├── graph_before_rr.fasta
+│   │       │   ├── graph_before_rr.gfa
+│   │       │   ├── graph_before_rr.gv
+│   │       │   ├── read_alignment_dump
+│   │       │   ├── repeat_graph_dump
+│   │       │   └── repeat_graph_edges.fasta
+│   │       ├── 30-contigger
+│   │       │   ├── contigs.fasta
+│   │       │   ├── contigs.fasta.fai
+│   │       │   ├── contigs_stats.txt
+│   │       │   ├── graph_final.fasta
+│   │       │   ├── graph_final.gfa
+│   │       │   ├── graph_final.gv
+│   │       │   └── scaffolds_links.txt
+│   │       ├── 40-polishing
+│   │       │   ├── base_coverage.bed.gz
+│   │       │   ├── contigs_stats.txt
+│   │       │   ├── edges_aln.bam.csi
+│   │       │   ├── filtered_contigs.fasta
+│   │       │   ├── filtered_contigs.fasta.fai
+│   │       │   ├── filtered_stats.txt
+│   │       │   ├── minimap_1.bam.csi
+│   │       │   ├── minimap.stderr
+│   │       │   └── polished_edges.gfa
+│   │       ├── assembly.fasta
+│   │       ├── assembly_graph.gfa
+│   │       ├── assembly_graph.gv
+│   │       ├── assembly_info.txt
+│   │       ├── flye.log
+│   │       └── params.json
+│   ├── 03_polishing
+│   │   └── pilon_output
+│   │       ├── chr3_aligned.bam
+│   │       ├── chr3_aligned.bam.bai
+│   │       ├── chr3_polished.changes
+│   │       ├── chr3_polished.fasta
+│   │       ├── chr3_polished.fasta.fai
+│   │       ├── draft_assembly.fasta
+│   │       ├── draft_assembly.fasta.amb
+│   │       ├── draft_assembly.fasta.ann
+│   │       ├── draft_assembly.fasta.bwt
+│   │       ├── draft_assembly.fasta.pac
+│   │       └── draft_assembly.fasta.sa
+│   ├── 04_assessment
+│   │   ├── busco_output
+│   │   │   └── busco_results
+│   │   │       ├── logs
+│   │   │       │   ├── bbtools_err.log
+│   │   │       │   ├── bbtools_out.log
+│   │   │       │   ├── busco.log
+│   │   │       │   ├── hmmsearch_err.log
+│   │   │       │   ├── hmmsearch_out.log
+│   │   │       │   ├── miniprot_align_embryophyta_odb10_err.log
+│   │   │       │   ├── miniprot_align_embryophyta_odb10_out.log
+│   │   │       │   ├── miniprot_index_err.log
+│   │   │       │   └── miniprot_index_out.log
+│   │   │       ├── run_embryophyta_odb10
+│   │   │       │   ├── full_table.tsv
+│   │   │       │   ├── miniprot_output
+│   │   │       │   │   ├── chr3_polished_embryophyta_odb10.gff -> ../../logs/miniprot_align_embryophyta_odb10_out.log
+│   │   │       │   │   └── ref.mpi
+│   │   │       │   ├── missing_busco_list.tsv
+│   │   │       │   ├── short_summary.json
+│   │   │       │   └── short_summary.txt
+│   │   │       ├── short_summary.specific.embryophyta_odb10.busco_results.json
+│   │   │       └── short_summary.specific.embryophyta_odb10.busco_results.txt
+│   │   └── quast_results
+│   │       ├── basic_stats
+│   │       │   ├── cumulative_plot.pdf
+│   │       │   ├── Draft_Flye_GC_content_plot.pdf
+│   │       │   ├── GC_content_plot.pdf
+│   │       │   ├── Nx_plot.pdf
+│   │       │   └── Polished_Pilon_GC_content_plot.pdf
+│   │       ├── icarus.html
+│   │       ├── icarus_viewers
+│   │       │   └── contig_size_viewer.html
+│   │       ├── quast.log
+│   │       ├── report.html
+│   │       ├── report.pdf
+│   │       ├── report.tex
+│   │       ├── report.tsv
+│   │       ├── report.txt
+│   │       ├── transposed_report.tex
+│   │       ├── transposed_report.tsv
+│   │       └── transposed_report.txt
+│   ├── 05_annotation
+│   │   ├── 01_repeat_masking
+│   │   │   ├── chr3_polished.fasta.cat.gz
+│   │   │   ├── chr3_polished.fasta.masked
+│   │   │   ├── chr3_polished.fasta.out
+│   │   │   └── chr3_polished.fasta.tbl
+│   │   ├── 02_structure_annotation
+│   │   │   ├── braker_output
+│   │   │   │   ├── Augustus
+│   │   │   │   │   ├── augustus.hints.aa
+│   │   │   │   │   ├── augustus.hints.codingseq
+│   │   │   │   │   └── augustus.hints.gtf
+│   │   │   │   ├── bam_header.map
+│   │   │   │   ├── braker.aa
+│   │   │   │   ├── braker.codingseq
+│   │   │   │   ├── braker.gtf
+│   │   │   │   ├── braker.log
+│   │   │   │   ├── braker_only.5040829.out
+│   │   │   │   ├── errors
+│   │   │   │   │   ├── aa2nonred.stderr
+│   │   │   │   │   └── ensure_min_n_training_genes.stderr
+│   │   │   │   ├── GeneMark-ET
+│   │   │   │   │   ├── genemark.f.multi_anchored.gtf
+│   │   │   │   │   ├── genemark.gtf
+│   │   │   │   │   └── gmhmm.mod
+│   │   │   │   ├── genome_header.map
+│   │   │   │   ├── hintsfile.gff
+│   │   │   │   ├── species
+│   │   │   │   │   └── lisa2
+│   │   │   │   │       ├── ex1.cfg
+│   │   │   │   │       ├── lisa2_exon_probs.pbl
+│   │   │   │   │       ├── lisa2_igenic_probs.pbl
+│   │   │   │   │       ├── lisa2_intron_probs.pbl
+│   │   │   │   │       ├── lisa2_metapars.cfg
+│   │   │   │   │       ├── lisa2_metapars.cgp.cfg
+│   │   │   │   │       ├── lisa2_metapars.utr.cfg
+│   │   │   │   │       ├── lisa2_parameters.cfg
+│   │   │   │   │       ├── lisa2_parameters.cfg.orig1
+│   │   │   │   │       └── lisa2_weightmatrix.txt
+│   │   │   │   └── what-to-cite.txt
+│   │   │   ├── mapping_results
+│   │   │   │   ├── mapped_RNA_Aligned.sortedByCoord.out.bam
+│   │   │   │   ├── mapped_RNA_Aligned.sortedByCoord.out.cram
+│   │   │   │   ├── mapped_RNA_Aligned.sortedByCoord.out.cram.crai
+│   │   │   │   ├── mapped_RNA_Log.final.out
+│   │   │   │   ├── mapped_RNA_Log.out
+│   │   │   │   ├── mapped_RNA_Log.progress.out
+│   │   │   │   └── mapped_RNA_SJ.out.tab
+│   │   │   ├── star_index
+│   │   │   │   ├── chrLength.txt
+│   │   │   │   ├── chrNameLength.txt
+│   │   │   │   ├── chrName.txt
+│   │   │   │   ├── chrStart.txt
+│   │   │   │   ├── Genome
+│   │   │   │   ├── genomeParameters.txt
+│   │   │   │   ├── Log.out
+│   │   │   │   ├── SA
+│   │   │   │   └── SAindex
+│   │   │   └── tmp
+│   │   └── 03_functional_annotation
+│   │       ├── chr3_functional.emapper.annotations
+│   │       ├── chr3_functional.emapper.hits
+│   │       ├── chr3_functional.emapper.seed_orthologs
+│   │       ├── eggnog_chr3.5078267.out
+│   │       ├── eggnog_chr3.5078295.out
+│   │       └── eggnog_chr3.5080532.out
+│   └── 06_expression
+│       ├── Dseq
+│       │   ├── clean_gene_counts.txt
+│       │   ├── Dseq.R
+│       │   ├── gene_counts_renamed.csv
+│       │   └── Heat_vs_Control_DESeq2_Results.csv
+│       ├── featureCounts.5223914.out
+│       ├── mapping_individual
+│       │   ├── Control_1_Aligned.sortedByCoord.out.bam
+│       │   ├── Control_1_Log.final.out
+│       │   ├── Control_1_Log.out
+│       │   ├── Control_1_Log.progress.out
+│       │   ├── Control_1_SJ.out.tab
+│       │   ├── Control_2_Aligned.sortedByCoord.out.bam
+│       │   ├── Control_2_Log.final.out
+│       │   ├── Control_2_Log.out
+│       │   ├── Control_2_Log.progress.out
+│       │   ├── Control_2_SJ.out.tab
+│       │   ├── Control_3_Aligned.sortedByCoord.out.bam
+│       │   ├── Control_3_Log.final.out
+│       │   ├── Control_3_Log.out
+│       │   ├── Control_3_Log.progress.out
+│       │   ├── Control_3_SJ.out.tab
+│       │   ├── Heat_treated_42_12h_1_Aligned.sortedByCoord.out.bam
+│       │   ├── Heat_treated_42_12h_1_Log.final.out
+│       │   ├── Heat_treated_42_12h_1_Log.out
+│       │   ├── Heat_treated_42_12h_1_Log.progress.out
+│       │   ├── Heat_treated_42_12h_1_SJ.out.tab
+│       │   ├── Heat_treated_42_12h_2_Aligned.sortedByCoord.out.bam
+│       │   ├── Heat_treated_42_12h_2_Log.final.out
+│       │   ├── Heat_treated_42_12h_2_Log.out
+│       │   ├── Heat_treated_42_12h_2_Log.progress.out
+│       │   ├── Heat_treated_42_12h_2_SJ.out.tab
+│       │   ├── Heat_treated_42_12h_3_Aligned.sortedByCoord.out.bam
+│       │   ├── Heat_treated_42_12h_3_Log.final.out
+│       │   ├── Heat_treated_42_12h_3_Log.out
+│       │   ├── Heat_treated_42_12h_3_Log.progress.out
+│       │   └── Heat_treated_42_12h_3_SJ.out.tab
+│       ├── raw_gene_counts.txt
+│       ├── raw_gene_counts.txt.summary
+│       └── star_individual.5123709.out
 ├── code
+│   ├── 10_braker_only.sh
+│   ├── 11_eggnog.sh
+│   ├── 12_star_individual.sh
+│   ├── 13_featurecounts.sh
+│   ├── 14_fastqc_hic.sh
+│   ├── 15_getorganelle.sh
+│   ├── 16_Dseq.R
+│   ├── 17_readcount_hist.R
 │   ├── 1_fastqc_WG_raw.sh
 │   ├── 2_fastqc_chr3_raw.sh
-│   └── 3_trimmomatic_chr3.sh
+│   ├── 3_trimmomatic_chr3.sh
+│   ├── 4_flye_assembly_chr3.sh
+│   ├── 5_pilon_polishing_chr3.sh
+│   ├── 6_quast_evaluation.sh
+│   ├── 7_busco_assessment.sh
+│   ├── 8_repeat_masking.sh
+│   └── 9_star_mapping.sh
 ├── data
 │   ├── metadata
 │   │   └── sample_info.csv
@@ -42,26 +264,53 @@
 │   │   ├── chr3_illumina_R2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R2.fastq.gz
 │   │   ├── CRR809859_f1.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_f1.fq.gz
 │   │   └── CRR809859_r2.fastq.gz -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_r2.fq.gz
+│   ├── reference_data
+│   │   └── C_purpureus_data -> /proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/Ceratodon_purpureus/C_purpureus.faa
 │   └── trimmed_data
 │       └── chromosome_3
 │           ├── chr3_R1_paired.fastq.gz
 │           ├── chr3_R1_unpaired.fastq.gz
 │           ├── chr3_R2_paired.fastq.gz
 │           └── chr3_R2_unpaired.fastq.gz
+├── data_for_IGV
 ├── figures
-│   ├── 01_initial_qc
-│   │   ├── adapter_r1_initial.png
-│   │   ├── adapter_r2_initial.png
-│   │   ├── quality_r1_initial.png
-│   │   └── quality_r2_initial.png
-│   └── 02_post_trim_qc
-│       ├── adapter_r1_post_trim.png
-│       ├── adapter_r2_post_trim.png
-│       ├── quality_r1_post_trim.png
-│       └── quality_r2_post_trim.png
+│   ├── DESeq
+│   │   ├── DESeq2_Heatmap.png
+│   │   ├── DESeq2_PCA_Plot.png
+│   │   ├── DESeq2_Volcano_Plot.png
+│   │   └── Histogram_Read_Counts_LightBlue.png
+│   ├── Flye
+│   │   └── Flye_Graph.png
+│   ├── IGV
+│   │   ├── g810.png
+│   │   ├── g822.png
+│   │   └── Intergenetic.png
+│   ├── illumina
+│   │   ├── 01_initial_qc
+│   │   │   ├── adapter_r1_initial.png
+│   │   │   ├── adapter_r2_initial.png
+│   │   │   ├── quality_r1_initial.png
+│   │   │   └── quality_r2_initial.png
+│   │   └── 02_post_trim_qc
+│   │       ├── adapter_r1_post_trim.png
+│   │       ├── adapter_r2_post_trim.png
+│   │       ├── quality_r1_post_trim.png
+│   │       └── quality_r2_post_trim.png
+│   ├── nanopore
+│   │   ├── Per_Base_Seq_Quality.png
+│   │   └── Seq_Length_Distribution.png
+│   └── QUAST
+│       ├── Plot_Cum_Length.png
+│       └── Summary_table.png
 ├── folders_structure.txt
 ├── logs
+│   ├── busco_chr3.4901272.out
+│   ├── flye_chr3.4872644.out
+│   ├── mask_chr3.4901631.out
+│   ├── pilon_chr3.4883863.out
+│   ├── quast_eval.4899801.out
+│   ├── terminal_analysis_braker_log.md
 │   └── trimmomatic_chr3.log
 └── README.md
 
-20 directories, 44 files
+62 directories, 251 files
