@@ -8,16 +8,12 @@
 #SBATCH --output=/home/lisa5634/GenomeAnalysis/analyses/07_chloroplast/%x.%j.out
 
 # Load the module
-GetOrganelle/1.7.7.1-foss-2024a
+module load GetOrganelle/1.7.7.1-foss-2024a
 
 # Input Paths
 DNA_R1="/proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_f1.fq.gz"
 DNA_R2="/proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/whole_genome_data/CRR809859_r2.fq.gz"
 OUT_DIR="/home/lisa5634/GenomeAnalysis/analyses/07_chloroplast/assembly_output"
-
-# Move into the output directory
-mkdir -p $OUT_DIR
-cd $OUT_DIR
 
 # Run GetOrganelle targeting the chloroplast (-F embplant_pt)
 echo "Starting Chloroplast Assembly..."
