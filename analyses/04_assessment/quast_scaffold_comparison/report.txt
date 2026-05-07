@@ -1,0 +1,25 @@
+All statistics are based on contigs of size >= 500 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                    Polished_Pilon  HiC_Scaffolded
+# contigs (>= 0 bp)         60              41            
+# contigs (>= 1000 bp)      59              40            
+# contigs (>= 5000 bp)      54              35            
+# contigs (>= 10000 bp)     52              33            
+# contigs (>= 25000 bp)     39              21            
+# contigs (>= 50000 bp)     26              9             
+Total length (>= 0 bp)      17208405        17210405      
+Total length (>= 1000 bp)   17207763        17209763      
+Total length (>= 5000 bp)   17192381        17194381      
+Total length (>= 10000 bp)  17177846        17179846      
+Total length (>= 25000 bp)  16957269        16983645      
+Total length (>= 50000 bp)  16504562        16573886      
+# contigs                   60              41            
+Largest contig              2927688         9182344       
+Total length                17208405        17210405      
+GC (%)                      41.79           41.79         
+N50                         1727450         9182344       
+N90                         228474          6871876       
+auN                         1494535.9       7646401.4     
+L50                         4               1             
+L90                         16              2             
+# N's per 100 kbp           0.00            11.62         
