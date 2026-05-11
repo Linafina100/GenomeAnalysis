@@ -9,10 +9,9 @@
 #SBATCH --mail-user=lina.sandberg-muller.5634@student.uu.se
 #SBATCH --output=logs/%x.%j.out
 
-# Load the necessary modules
-module load bioinfo-tools
-module load bwa
-module load samtools
+# Load the necessary modules correctly for Pelle
+module load BWA
+module load SAMtools
 module load Pilon
 
 # Define folder paths to match your newly numbered structure
