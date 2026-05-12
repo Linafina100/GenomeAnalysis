@@ -9,7 +9,7 @@
 
 cd /home/lisa5634/GenomeAnalysis/analyses/02_genome_assembly/hic_scaffolding
 
-# Load the exact modules you found
+# Load modules
 module load YaHS/1.2.2-foss-2024a
 module load SAMtools/1.22.1-GCC-13.3.0
 module load Java/17
