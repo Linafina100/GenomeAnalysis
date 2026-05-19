@@ -2,34 +2,57 @@
 #SBATCH -A uppmax2026-1-61
 #SBATCH -p pelle
 #SBATCH -c 2
-#SBATCH -t 04:00:00
-#SBATCH -J cp_mapping
-#SBATCH --mail-type=ALL
-#SBATCH --output=/home/lisa5634/GenomeAnalysis/analyses/05_annotation/%x.%j.out
+#SBATCH -t 06:00:00
+#SBATCH --mem=64G
+#SBATCH -J cp_cov
+#SBATCH --output=/home/lisa5634/GenomeAnalysis/analyses/07_chloroplast/%x.%j.out
 
-# Create a directory for this analysis and move into it
-mkdir -p /home/lisa5634/GenomeAnalysis/analyses/05_annotation/cp_mapping
-cd /home/lisa5634/GenomeAnalysis/analyses/05_annotation/cp_mapping
+set -euo pipefail
 
-# Load modules
-module load BWA
-module load SAMtools/1.22.1-GCC-13.3.0
+module load Bowtie2
+module load SAMtools
 
-# Define paths
-CP_FASTA="/home/lisa5634/GenomeAnalysis/analyses/07_chloroplast/assembly_output/embplant_pt.K105.scaffolds.graph1.1.path_sequence.fasta"
-READ1="/home/lisa5634/GenomeAnalysis/data/raw_data/CRR809859_f1.fastq.gz"
-READ2="/home/lisa5634/GenomeAnalysis/data/raw_data/CRR809859_r2.fastq.gz"
+echo "=== START chloroplast coverage ==="
+date
 
-echo "Indexing the chloroplast assembly..."
-bwa index $CP_FASTA
+PROJECT="$HOME/GenomeAnalysis"
+OUTDIR="$PROJECT/analyses/07_chloroplast/cp_mapping"
 
-echo "Mapping reads with BWA MEM, converting to BAM, and sorting..."
-bwa mem -t 2 $CP_FASTA $READ1 $READ2 | samtools view -bS - | samtools sort -o cp_mapped_sorted.bam
+REF="$PROJECT/analyses/07_chloroplast/assembly_output/embplant_pt.K105.scaffolds.graph1.1.path_sequence.fasta"
+R1="$PROJECT/data/raw_data/CRR809859_f1.fastq.gz"
+R2="$PROJECT/data/raw_data/CRR809859_r2.fastq.gz"
 
-echo "Indexing the sorted BAM file..."
-samtools index cp_mapped_sorted.bam
+mkdir -p "$OUTDIR"
+cd "$OUTDIR"
 
-echo "Calculating per-base coverage depth..."
-samtools depth cp_mapped_sorted.bam > cp_coverage_depth.txt
+rm -f cp.bam cp.bam.bai cp.depth cp_index*
 
-echo "Mapping complete!"
+echo "=== Checking input files ==="
+ls -lh "$REF" "$R1" "$R2"
+
+echo "=== Build Bowtie2 index ==="
+bowtie2-build "$REF" cp_index
+
+echo "=== Mapping and sorting directly to BAM ==="
+# -p 2 and -@ 2 match your core limit. 
+# -T tmp_sort/cp_temp forces it to use your local folder instead of the server's
+bowtie2 -p 2 -x cp_index \
+  -1 "$R1" \
+  -2 "$R2" \
+| samtools view -b -F 4 - \
+| samtools sort -@ 2 -m 1G -T $SNIC_TMP/cp_temp -o cp.bam
+
+echo "=== Index BAM ==="
+samtools index cp.bam
+
+echo "=== Calculate coverage depth ==="
+samtools depth cp.bam > cp.depth
+
+echo "=== Average coverage ==="
+awk '{sum+=$3} END {print "Average coverage:", sum/NR}' cp.depth
+
+echo "=== Output files ==="
+ls -lh cp.bam cp.bam.bai cp.depth
+
+echo "=== DONE ==="
+date
