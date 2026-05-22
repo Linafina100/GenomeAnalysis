@@ -13,6 +13,10 @@ code/: Contains all Bash and R scripts used for pre-processing and analysis.
 
 analyses/: Stores the outputs and results, including QC reports and assembly statistics.
 
+figures/: figures used in wiki to show results.
+
+logs/: logs of analysis 
+
 ## Pipeline
 1. Preprocessing & quality control.
 2. Genome assembly.
@@ -20,6 +24,7 @@ analyses/: Stores the outputs and results, including QC reports and assembly sta
 4. Evaluating assembly quality.
 5. Functional and structural annotation.
 6. Transcriptomic analysis (differential expression).
+7. Extra analysis: Hi-scaffold & chromosome assembly.
 
 ### Detailed Workflow
 The analysis is designed to be executed in the following order:
@@ -32,3 +37,5 @@ The analysis is designed to be executed in the following order:
 6. Assembly Evaluation: Quality assessment of the resulting contigs using QUAST.
 7. Structural gene prediction with BRAKER2 and functional assignment with eggNOG-mapper.
 8. Differential expression analysis across heat conditions with STAR, featureCounts and DESeq2.
+9. HiC reads align to polished assembly and YaHS analyzed interactions
+10. Chromosome assembly: getOrganelle to assembly whole genome Illumina reads to chromosome.
